@@ -28,6 +28,47 @@ A relação entre Padrões de Projetos com Java e o spring framework pode-se ser
 
 <hr>
 
+Swagger: ``http://127.0.0.1:8080/swagger-ui.html``
+
+Minimun Payload in POST: 
+```JSON
+{
+  "name": "string",
+  "ean": "string",
+  "unity": "string",
+  "distributors": [
+    {
+      "name": "string",
+      "comments": "string",
+      "address": {
+        "cep": "stringCepWith8Numbers"
+      },
+	  "addressNumber": 1
+    }
+  ]
+}
+```
+Example:
+```JSON
+{
+  "name": "Caneta Esferográfica",
+  "ean": "0058771387587",
+  "unity": "Peça",
+  "distributors": [
+    {
+      "name": "BIC",
+      "comments": "Fabricante de canetas",
+      "address": {
+        "cep": "06447130"
+      },
+      "addressNumber": 800
+    }
+  ]
+}
+```
+
+<hr>
+
 Links Interessantes:
 * IDE: [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/);
 * [jsonschema2pojo.org](https://www.jsonschema2pojo.org);
