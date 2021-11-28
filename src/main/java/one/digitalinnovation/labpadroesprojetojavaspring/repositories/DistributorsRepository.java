@@ -10,5 +10,4 @@ import java.util.OptionalDouble;
 @Repository
 public interface DistributorsRepository extends CrudRepository<Distributors, String> {
 
-    OptionalDouble findById(Long idDistributor);
 }

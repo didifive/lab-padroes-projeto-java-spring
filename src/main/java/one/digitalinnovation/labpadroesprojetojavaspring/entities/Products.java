@@ -1,6 +1,8 @@
 package one.digitalinnovation.labpadroesprojetojavaspring.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "Products")
 public class Products {
@@ -12,7 +14,7 @@ public class Products {
     private String ean;
     private String unity;
     @OneToMany
-    private Distributors distributor;
+    List<Distributors> distributors = new ArrayList<>();
 
     public Long getIdProduct() {
         return idProduct;
@@ -46,11 +48,11 @@ public class Products {
         this.unity = unity;
     }
 
-    public Distributors getDistributor() {
-        return distributor;
+    public List<Distributors> getDistributors() {
+        return distributors;
     }
 
-    public void setDistributor(Distributors distributor) {
-        this.distributor = distributor;
+    public void setDistributors(List<Distributors> distributors) {
+        this.distributors = distributors;
     }
 }

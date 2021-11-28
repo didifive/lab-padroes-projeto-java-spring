@@ -11,7 +11,7 @@ public class Distributors {
     private String name;
     private String comments;
     @ManyToOne
-    private Addresses addresses;
+    private Addresses address;
 
     public Long getIdDistributor() {
         return idDistributor;
@@ -38,10 +38,10 @@ public class Distributors {
     }
 
     public Addresses getAddress() {
-        return addresses;
+        return address;
     }
 
-    public void setAddress(Addresses addresses) {
-        this.addresses = addresses;
+    public void setAddress(Addresses address) {
+        this.address = address;
     }
 }

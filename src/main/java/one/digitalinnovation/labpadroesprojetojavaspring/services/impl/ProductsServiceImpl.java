@@ -12,10 +12,11 @@ import one.digitalinnovation.labpadroesprojetojavaspring.services.ViaCepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
- * Implementação da <b>Strategy</b> {@link ClienteService}, a qual pode ser
+ * Implementação da <b>Strategy</b> {@link ProductsService}, a qual pode ser
  * injetada pelo Spring (via {@link Autowired}). Com isso, como essa classe é um
  * {@link Service}, ela será tratada como um <b>Singleton</b>.
  *
@@ -67,16 +68,28 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     private void insertProductWithDistributor(Products product) {
-        String cep = product.getDistributor().getAddress().getCep();
+        List<Distributors> distributorsList = product.getDistributors();
+        for (Distributors distributor : distributorsList) {
+            Long idDistributor = distributor.getIdDistributor();
+            if (idDistributor == null){
+                distributor.setName("generico");
+                distributor.getAddress().setCep("14620-000");
+                distributor.setComments("coringa");
+            }
+            insertDistributorWithZipCod(distributor);
+        }
+
+        productsRepository.save(product);
+    }
+
+    private void insertDistributorWithZipCod(Distributors distributor) {
+        String cep = distributor.getAddress().getCep();
         Addresses address = addressesRepository.findById(cep).orElseGet(() -> {
             Addresses newAddress = viaCepService.consultarCep(cep);
             addressesRepository.save(newAddress);
             return newAddress;
         });
-
-        product.getDistributor().setAddress(address);
-
-        productsRepository.save(product);
+        distributor.setAddress(address);
     }
 
 }
