@@ -12,6 +12,7 @@ import one.digitalinnovation.labpadroesprojetojavaspring.services.ViaCepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,7 +30,7 @@ public class ProductsServiceImpl implements ProductsService {
     @Autowired
     private ProductsRepository productsRepository;
     @Autowired
-    private DistributorsRepository distributorRepository;
+    private DistributorsRepository distributorsRepository;
     @Autowired
     private AddressesRepository addressesRepository;
     @Autowired
@@ -69,16 +70,7 @@ public class ProductsServiceImpl implements ProductsService {
 
     private void insertProductWithDistributor(Products product) {
         List<Distributors> distributorsList = product.getDistributors();
-        for (Distributors distributor : distributorsList) {
-            Long idDistributor = distributor.getIdDistributor();
-            if (idDistributor == null){
-                distributor.setName("generico");
-                distributor.getAddress().setCep("14620-000");
-                distributor.setComments("coringa");
-            }
-            insertDistributorWithZipCod(distributor);
-        }
-
+        distributorsList.forEach(this::insertDistributorWithZipCod);
         productsRepository.save(product);
     }
 
@@ -90,6 +82,7 @@ public class ProductsServiceImpl implements ProductsService {
             return newAddress;
         });
         distributor.setAddress(address);
+        distributorsRepository.save(distributor);
     }
 
 }

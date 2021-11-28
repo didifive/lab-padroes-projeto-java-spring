@@ -13,7 +13,7 @@ public class Products {
     private String name;
     private String ean;
     private String unity;
-    @OneToMany
+    @OneToMany(cascade={CascadeType.MERGE}, fetch = FetchType.LAZY)
     List<Distributors> distributors = new ArrayList<>();
 
     public Long getIdProduct() {
@@ -48,9 +48,7 @@ public class Products {
         this.unity = unity;
     }
 
-    public List<Distributors> getDistributors() {
-        return distributors;
-    }
+    public List<Distributors> getDistributors() { return distributors; }
 
     public void setDistributors(List<Distributors> distributors) {
         this.distributors = distributors;

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * @author didifive
  */
 @RestController
-@RequestMapping("clientes")
+@RequestMapping("api/v1/products")
 public class ProductsRestController {
 
     @Autowired

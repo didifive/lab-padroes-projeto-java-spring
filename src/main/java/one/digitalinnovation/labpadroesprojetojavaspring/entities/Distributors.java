@@ -12,10 +12,9 @@ public class Distributors {
     private String comments;
     @ManyToOne
     private Addresses address;
+    private Integer addressNumber;
 
-    public Long getIdDistributor() {
-        return idDistributor;
-    }
+    public Long getIdDistributor() { return idDistributor; }
 
     public void setIdDistributor(Long idDistributor) {
         this.idDistributor = idDistributor;
@@ -44,4 +43,8 @@ public class Distributors {
     public void setAddress(Addresses address) {
         this.address = address;
     }
+
+    public Integer getAddressNumber() { return addressNumber; }
+
+    public void setAddressNumber(Integer addressNumber) { this.addressNumber = addressNumber; }
 }
