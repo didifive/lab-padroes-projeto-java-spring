@@ -4,6 +4,23 @@
 
 Projeto desenvolvido com instruções de [Venilton FalvoJr](https://github.com/falvojr) no Labs da [Digital Innovation One](https://www.dio.me/). Como base foi utilizado o repositório [digitalinnovationone/lab-padroes-projeto-spring](https://github.com/digitalinnovationone/lab-padroes-projeto-spring). Neste Lab foi exposto também padrões de projeto Singleton, Strategy e Facade em Java puro que podem ser conferidos no repositório [digitalinnovationone/lab-padroes-projeto-java](https://github.com/digitalinnovationone/lab-padroes-projeto-java)
 
+<p align="center">
+	<img alt="Repository language count" src="https://img.shields.io/github/languages/count/didifive/lab-padroes-projeto-java-spring">
+	<a href="https://www.linkedin.com/in/luis-carlos-zancanela/">
+		<img alt="Made by Didi" src="https://img.shields.io/badge/made%20by-Didi-green">
+	</a>
+	<a href="https://github.com/didifive/lab-padroes-projeto-java-spring/commits/master">
+		<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/didifive/lab-padroes-projeto-java-spring?color=blue">
+	</a>
+	<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?color=blue">
+</p>
+
+<p align="center">
+	<a href="https://dev.java/">
+	  <img alt="Java" src="https://img.shields.io/static/v1?color=red&label=Dev&message=Java&style=for-the-badge&logo=Java">
+	</a>
+</p>
+
 <hr>
 
 Para iniciar este projeto, foi utilizado o [spring initializr](https://start.spring.io/) utilizando as opções:
