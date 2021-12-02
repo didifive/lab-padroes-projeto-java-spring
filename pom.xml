@@ -17,7 +17,7 @@
 	<description>Some design patterns in Java and spring</description>
 
 	<properties>
-		<java.version>11.0.13</java.version>
+		<java.version>11</java.version>
 		<openapi.version>1.5.12</openapi.version>
 		<spring-cloud.version>2021.0.0-RC1</spring-cloud.version>
 	</properties>
